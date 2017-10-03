@@ -1,3 +1,3 @@
-To install the motd:
-Open terminal
-run command: sudo nano /etc/bash.bashrc
+To install the motd: </br>
+Open terminal </br>
+run command: sudo nano /etc/bash.bashrc </br>
