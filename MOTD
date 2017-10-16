@@ -12,11 +12,11 @@ echo "$(tput setaf 2)
    .~~.   .~~.    `date +"%A, %e %B %Y, %r"`
   '. \ ' ' / .'   `uname -srmo`$(tput setaf 1)
    .~ .~~~..~.    
-  : .~.'~'.~. :   Uptime.............: ${UPTIME}
- ~ (   ) (   ) ~  Free Disk Space....: `df -h | grep -E '^/dev/h' | awk '{ print $4 }' | awk -F '.' '{ print $1 }'` Free space on disk
+  : .~.'~'.~. :   
+ ~ (   ) (   ) ~  Uptime.............: ${UPTIME}
 ( : '~'.~.'~' : ) Load Averages......: ${one}, ${five}, ${fifteen} (1, 5, 15 min)
- ~ .~ (   ) ~. ~  Running Processes..: `ps ax | wc -l | tr -d " "`
-  (  : '~' :  )   IP Addresses.......: `/sbin/ifconfig eth0 | /bin/grep "inet addr" | /usr/bin/cut -d ":" -f 2 | /usr/bin/cut -d " " -f 1` and `wget -q -O - http://icanhazip.com/ | tail`
+ ~ .~ (   ) ~. ~  Wi-Fi IP Address...: `/sbin/ifconfig wlan0 | /bin/grep "inet addr" | /usr/bin/cut -d ":" -f 2 | /usr/bin/cut -d " " -f 1`
+  (  : '~' :  )   LAN IP Addresses...: `/sbin/ifconfig eth0 | /bin/grep "inet addr" | /usr/bin/cut -d ":" -f 2 | /usr/bin/cut -d " " -f 1`
    '~ .~~~. ~'    Aurora Weather.....: `curl -s "http://rss.accuweather.com/rss/liveweather_rss.asp?imperial=1&locCode=NAM|US|CO|AURORA|" | sed -n '/Currently:/ s/.*: \(.*\): \([0-9]*\)\([CF]\).*/\2°\3, \1/p'`
        '~'
 $(tput sgr0)"
