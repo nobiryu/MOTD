@@ -5,4 +5,4 @@ copy and past the MOTD file to the nano</br>
 save then exit</br>
 
 ASCII Generator </br>
-<b>http://patorjk.com/software</b>
+<b>http://patorjk.com/software/taag</b>
