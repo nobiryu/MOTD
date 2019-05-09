@@ -15,8 +15,8 @@ echo "$(tput setaf 2)
   : .~.'~'.~. :   
  ~ (   ) (   ) ~  Uptime.............: ${UPTIME}
 ( : '~'.~.'~' : ) Load Averages......: ${one}, ${five}, ${fifteen} (1, 5, 15 min)
- ~ .~ (   ) ~. ~  Wi-Fi IP Address...: `/sbin/ifconfig wlan0 | /bin/grep "inet addr" | /usr/bin/cut -d ":" -f 2 | /usr/bin/cut -d " " -f 1`
-  (  : '~' :  )   LAN IP Addresses...: `/sbin/ifconfig eth0 | /bin/grep "inet addr" | /usr/bin/cut -d ":" -f 2 | /usr/bin/cut -d " " -f 1`
+ ~ .~ (   ) ~. ~  Wi-Fi IP Address...: `/sbin/ifconfig wlan0 | /bin/grep "inet" | /bin/grep -Po 'inet \K[\d.]+'`
+  (  : '~' :  )   LAN IP Addresses...: `/sbin/ifconfig eht0 | /bin/grep "inet" | /bin/grep -Po 'inet \K[\d.]+'`
    '~ .~~~. ~'    Aurora Weather.....: `curl -s "http://rss.accuweather.com/rss/liveweather_rss.asp?imperial=1&locCode=NAM|US|CO|AURORA|" | sed -n '/Currently:/ s/.*: \(.*\): \([0-9]*\)\([CF]\).*/\2°\3, \1/p'`
        '~'
 $(tput sgr0)"
